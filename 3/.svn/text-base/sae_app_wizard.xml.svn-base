@@ -1,0 +1,19 @@
+<appwizard><introduction><name></name><author>tghbai</author><icon></icon><homepage></homepage><description><![CDATA[微信公共账号应用]]></description></introduction><platform><services><service></service><service name="back"  params="数据存储">Storage</service><service name="kaoyanquan2weima"  params="数据存储">Storage</service><service name="kaoyanquanrizhi"  params="数据存储">Storage</service><service name="systemlog"  params="数据存储">Storage</service><service name="website"  params="数据存储">Storage</service><service>Mysql</service></services><appconfig><tpl><![CDATA[
+name: <<appname>>
+version: <<version>>
+version: 1
+
+cron:
+- description: refresh
+  url: refreshi/wx_refresh.php
+  schedule: every day of month 00:02
+- description: refreshWeek
+  url: refreshi/wx_weekrefresh.php
+  schedule: every monday of month 00:05
+- description: Mysql backup
+  url: refreshi/back.php
+  schedule: every monday of month 00:00
+  
+...
+
+]]></tpl></appconfig></platform><code><initScript>index.php</initScript></code></appwizard>

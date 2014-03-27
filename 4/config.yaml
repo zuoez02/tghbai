@@ -1,0 +1,18 @@
+---
+name: tghbai
+version: 4
+
+cron:
+- description: everyday refresh
+  url: wx_refresh/wx_refresh.php
+  schedule: every day of month 20:00
+
+- description: refreshWeek
+  url: wx_refresh/wx_weekrefresh.php
+  schedule: every monday of month 20:00
+
+- description: Mysql backup
+  url: wx_refresh/wx_database_backup.php
+  schedule: every monday of month 20:00
+  
+...
